@@ -8,7 +8,7 @@ namespace CSharpIntermediate
         [STAThread]
         static void Main(string[] args)
         {
-            Exercise3();
+            Exercise4And5();
         }
 
         static void Exercise1()
@@ -16,8 +16,22 @@ namespace CSharpIntermediate
             // Create an instance of the stopwatch object.
             var stopwatch = new Stopwatch();
 
+            // Pre-define the input variable.
+            var input = "";
+
+            Console.WriteLine("Please type 'start' to begin the stopwatch.");
+
+            while (input.ToLower() != "start")
+                // Get input from the user.
+                input = Console.ReadLine();
+
             // Start the stopwatch.
             stopwatch.Start();
+
+            Console.WriteLine("Please type 'stop' to end the stopwatch.");
+
+            while (input.ToLower() != "stop")
+                input = Console.ReadLine();
 
             // Stop the stopwatch.
             stopwatch.Stop();
@@ -56,9 +70,11 @@ namespace CSharpIntermediate
             Console.WriteLine(stack.Pop());
         }
 
-        static void Exercise4()
+        static void Exercise4And5()
         {
+            var dbCommand = new DbCommand(new OracleConnection("ORACLE"), "SELECT * FROM dbo.CustomerAddress");
 
+            dbCommand.Execute();
         }
     }
 }
