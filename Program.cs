@@ -8,7 +8,7 @@ namespace CSharpIntermediate
         [STAThread]
         static void Main(string[] args)
         {
-            Exercise4And5();
+            Exercise6();
         }
 
         static void Exercise1()
@@ -75,6 +75,17 @@ namespace CSharpIntermediate
             var dbCommand = new DbCommand(new OracleConnection("ORACLE"), "SELECT * FROM dbo.CustomerAddress");
 
             dbCommand.Execute();
+        }
+
+        static void Exercise6()
+        {
+            var Workflow = new Workflow();
+
+            Workflow.AddActivity(new ChangeVideoStatus());
+            Workflow.AddActivity(new SendEmail());
+            Workflow.AddActivity(new UploadVideo("Video Source"));
+
+            Workflow.Execute();
         }
     }
 }
