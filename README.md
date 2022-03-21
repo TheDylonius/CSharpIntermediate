@@ -1,5 +1,5 @@
 # csharp-intermediate
-This repository will be updated as I progress through the C# Intermediate Course by Mosh Hamedani.
+This repository hosts my project for the C# Intermediate course by Mosh Hamedani.
 
 ## Progress
 - [x] Section 1:	General Introduction
